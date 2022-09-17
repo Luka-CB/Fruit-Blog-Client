@@ -1,11 +1,11 @@
-const path = require('path')
+const path = require("path");
 
 module.exports = {
   devServer: {
     proxy: {
-      '/api': {
-        target: 'http://localhost:5000',
+      "/api": {
+        target: "https://fruit-blog-api.onrender.com",
       },
     },
   },
-}
+};
