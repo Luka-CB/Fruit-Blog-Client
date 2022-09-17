@@ -1,0 +1,423 @@
+.post-page {
+  position: relative;
+
+  .post-page-container {
+    display: flex;
+    width: 90%;
+    margin: auto;
+    align-items: flex-start;
+    padding: 50px 0;
+
+    @media (max-width: 800px) {
+      flex-direction: column-reverse;
+    }
+
+    @media (min-width: 1700px) {
+      margin: 100px auto;
+    }
+
+    .col-1 {
+      background-color: $dark;
+      width: 30%;
+      min-width: 250px;
+      min-height: 60vh;
+      margin-right: 10px;
+      box-shadow: 3px 2px 8px $darker;
+      border-radius: 10px;
+      position: relative;
+
+      h1 {
+        text-align: center;
+        margin: 10px 0;
+        color: $lighter;
+      }
+
+      .posts {
+        .post {
+          background-color: rgb(31, 31, 31);
+          width: 90%;
+          margin: 20px auto;
+          box-shadow: 0 10px 8px -4px $darker;
+          border-radius: 10px;
+          padding: 10px;
+          display: flex;
+          flex-direction: column;
+
+          h2 {
+            text-align: center;
+            color: $light;
+          }
+
+          .feedbacks {
+            display: flex;
+            margin-top: 10px;
+            width: 120px;
+            justify-content: space-between;
+            align-items: center;
+
+            .likes {
+              .like-outline {
+                color: $light;
+              }
+
+              .like-fill {
+                color: rgb(48, 111, 248);
+              }
+
+              .num {
+                margin-left: 5px;
+                color: $lighter-trans;
+              }
+            }
+
+            .comments {
+              i {
+                color: $light;
+              }
+              .num {
+                color: $lighter-trans;
+                margin-left: 5px;
+              }
+            }
+          }
+
+          .date {
+            margin-top: 10px;
+            color: $lighter-trans;
+          }
+
+          .read-post-btn {
+            margin-top: 10px;
+            width: 120px;
+            align-self: end;
+            padding: 5px 0;
+            color: $light;
+            border-width: 3px;
+            transition: 0.2s ease-in-out;
+
+            &:hover {
+              background-color: $dark;
+              color: $lighter;
+              border-width: 1px;
+              border-color: $lighter;
+              padding: 7px 0;
+            }
+          }
+        }
+      }
+
+      @media (max-width: 800px) {
+        width: 100%;
+        margin-top: 50px;
+
+        h1 {
+          font-size: 1.1rem;
+        }
+
+        .posts {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+
+          @media (max-width: 600px) {
+            grid-template-columns: repeat(2, 1fr);
+
+            @media (max-width: 400px) {
+              grid-template-columns: 1fr;
+            }
+          }
+
+          .post {
+            h2 {
+              font-size: 0.9rem;
+            }
+
+            .date {
+              font-size: 0.8rem;
+            }
+
+            .read-post-btn {
+              padding: 3px 0;
+              border-width: 2px;
+              font-size: 0.7rem;
+
+              &:hover {
+                border-width: 1px;
+                padding: 5px 0;
+              }
+            }
+          }
+        }
+      }
+
+      @media (min-width: 1700px) {
+        margin-right: 20px;
+        box-shadow: 6px 4px 10px $darker;
+
+        h1 {
+          margin: 20px 0;
+          font-size: 2.5rem;
+        }
+
+        .posts {
+          .post {
+            margin: 40px auto;
+            box-shadow: 0 15px 12px -4px $darker;
+            border-radius: 20px;
+            padding: 20px;
+
+            h2 {
+              font-size: 2rem;
+            }
+
+            .feedbacks {
+              display: flex;
+              margin-top: 40px;
+              width: 220px;
+
+              .likes {
+                .like-outline {
+                  font-size: 2.5rem;
+                }
+
+                .like-fill {
+                  font-size: 2.5rem;
+                }
+
+                .num {
+                  margin-left: 15px;
+                  font-size: 2rem;
+                }
+              }
+
+              .comments {
+                i {
+                  font-size: 2.5rem;
+                }
+                .num {
+                  font-size: 2rem;
+                  margin-left: 15px;
+                }
+              }
+            }
+
+            .date {
+              margin-top: 40px;
+              font-size: 1.5rem;
+            }
+
+            .read-post-btn {
+              margin-top: 20px;
+              width: 220px;
+              padding: 10px 0;
+              font-size: 1.5rem;
+            }
+          }
+        }
+      }
+    }
+
+    .col-2 {
+      min-width: 250px;
+      position: relative;
+      background-color: $primary-trans;
+      backdrop-filter: blur(7px);
+      flex: 1;
+      margin-left: 10px;
+      border-top: 6px solid $secondary;
+      border-left: 3px solid $secondary-trans;
+      border-radius: 10px;
+      min-height: 60vh;
+      box-shadow: 3px 2px 8px $darker;
+
+      h1 {
+        text-align: center;
+        margin: 10px 0;
+        text-shadow: 1px 1px 1px $darker;
+      }
+
+      hr {
+        width: 70%;
+        margin: 0 auto;
+      }
+
+      .date {
+        text-align: right;
+        width: 70%;
+        margin: 10px auto;
+        text-shadow: 1px 0 1px $darker;
+
+        span {
+          background-color: $light;
+          padding: 3px;
+          border-radius: 5px;
+          box-shadow: 1px 1px 5px $darker;
+        }
+      }
+
+      .post-text {
+        margin: 20px;
+        color: $lighter;
+        background-color: $dark;
+        padding: 10px;
+      }
+
+      .feedbacks {
+        background-color: $dark;
+        width: 250px;
+        height: 60px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 5px;
+        margin: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px $darker;
+        position: relative;
+
+        .likes {
+          display: flex;
+          align-items: center;
+
+          .icons {
+            .like-outline {
+              color: $light;
+              font-size: 1.5rem;
+              cursor: pointer;
+              transition: 0.3s ease-in-out;
+
+              &:hover {
+                color: rgb(48, 111, 248);
+              }
+            }
+
+            .like-fill {
+              color: rgb(48, 111, 248);
+              font-size: 1.5rem;
+              cursor: pointer;
+              transition: 0.3s ease-in-out;
+
+              &:hover {
+                color: rgb(0, 73, 231);
+              }
+            }
+          }
+
+          .num {
+            margin-left: 5px;
+            color: $lighter-trans;
+            font-size: 1.2rem;
+          }
+        }
+
+        .comments {
+          cursor: pointer;
+
+          i {
+            color: $light;
+            font-size: 1.5rem;
+            transition: 0.3s ease-in-out;
+          }
+
+          .num {
+            margin-left: 5px;
+            color: $lighter-trans;
+            font-size: 1.2rem;
+
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+
+      @media (max-width: 500px) {
+        width: 100%;
+        margin-left: 0;
+
+        h1 {
+          font-size: 1.1rem;
+          letter-spacing: 3px;
+        }
+
+        .post-text {
+          width: 95%;
+          margin: 20px auto;
+          font-size: 0.8rem;
+        }
+
+        .feedbacks {
+          width: 95%;
+          margin: 20px auto;
+        }
+      }
+
+      @media (min-width: 1700px) {
+        margin-left: 20px;
+        border-top: 10px solid $secondary;
+        border-left: 5px solid $secondary-trans;
+        min-height: 60vh;
+        box-shadow: 6px 4px 10px $darker;
+
+        h1 {
+          margin: 20px 0;
+          text-shadow: 2px 2px 2px $darker;
+          font-size: 3rem;
+        }
+
+        .date {
+          margin: 20px auto;
+          text-shadow: 1px 1px 1px $darker;
+          font-size: 1.8rem;
+
+          span {
+            padding: 7px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 6px $darker;
+          }
+        }
+
+        .post-text {
+          margin: 40px;
+          font-size: 1.5rem;
+          padding: 20px;
+        }
+
+        .feedbacks {
+          width: 450px;
+          height: 100px;
+          margin: 40px;
+          border-radius: 15px;
+          box-shadow: 0 4px 7px $darker;
+
+          .likes {
+            .icons {
+              .like-outline {
+                font-size: 3rem;
+              }
+
+              .like-fill {
+                font-size: 3rem;
+              }
+            }
+
+            .num {
+              margin-left: 15px;
+              font-size: 2.5rem;
+            }
+          }
+
+          .comments {
+            i {
+              font-size: 3rem;
+            }
+
+            .num {
+              margin-left: 15px;
+              font-size: 2.5rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}

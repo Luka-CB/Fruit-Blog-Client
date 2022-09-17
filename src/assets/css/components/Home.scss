@@ -1,0 +1,174 @@
+.container {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+
+  .post {
+    width: 70%;
+    min-height: 60vh;
+    position: relative;
+    background-color: $primary-trans;
+    backdrop-filter: blur(8px);
+    margin: 50px;
+    padding: 0 0 30px 0px;
+    border-top: 6px solid $secondary;
+    border-radius: 15px;
+    border-left: 3px solid $secondary-trans;
+    box-shadow: 0 15px 12px -4px $primary-trans;
+    transition: 0.3s ease-in-out;
+
+    @media (max-width: 700px) {
+      width: 95%;
+      min-width: 250px;
+      margin: 50px auto;
+    }
+
+    .post_header {
+      display: flex;
+      justify-content: space-between;
+      padding: 5px 10px;
+    }
+
+    .post_body {
+      padding: 20px 10px;
+      text-indent: 10px;
+
+      h1 {
+        text-align: center;
+        font-family: $fontSecondary;
+        letter-spacing: 2px;
+      }
+
+      p {
+        margin-top: 30px;
+        line-height: 20px;
+        color: $dark;
+        text-shadow: 0 -0.5px 1px $dark;
+      }
+    }
+
+    .post_footer {
+      display: flex;
+      width: 150px;
+      margin: 10px 0 0 0;
+      justify-content: space-between;
+      align-items: center;
+      border: 2px solid $secondary-trans;
+      background-color: $dark-trans;
+      border-left: unset;
+      padding: 5px;
+      height: 60px;
+      position: relative;
+
+      .likes {
+        display: flex;
+        align-items: center;
+
+        .icons {
+          .like-outline {
+            color: $light;
+            font-size: 1.3rem;
+            cursor: pointer;
+            transition: 0.3s ease-in-out;
+
+            &:hover {
+              color: rgb(48, 111, 248);
+            }
+          }
+
+          .like-fill {
+            color: rgb(0, 73, 231);
+            font-size: 1.3rem;
+            cursor: pointer;
+            transition: 0.3s ease-in-out;
+
+            &:hover {
+              color: rgb(48, 111, 248);
+            }
+          }
+        }
+
+        .num {
+          margin-left: 5px;
+          font-weight: bold;
+          color: $lighter-trans;
+        }
+      }
+
+      .comments {
+        cursor: pointer;
+
+        i {
+          font-size: 1.3rem;
+          color: $light;
+        }
+
+        .num {
+          margin-left: 5px;
+          font-weight: bold;
+          color: $lighter-trans;
+        }
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    @media (min-width: 1700px) {
+      margin-top: 100px;
+      border-top: 12px solid $secondary;
+      border-left: 6px solid $secondary-trans;
+
+      .post_header {
+        padding: 20px;
+        font-size: 2rem;
+      }
+
+      .post_body {
+        padding: 30px;
+
+        h1 {
+          font-size: 3.5rem;
+        }
+
+        p {
+          line-height: normal;
+          font-size: 1.5rem;
+        }
+      }
+
+      .post_footer {
+        width: 350px;
+        padding: 15px;
+        height: 150px;
+
+        .likes {
+          .icons {
+            .like-outline {
+              font-size: 3rem;
+            }
+
+            .like-fill {
+              font-size: 3rem;
+            }
+          }
+
+          .num {
+            font-size: 2.5rem;
+          }
+        }
+
+        .comments {
+          i {
+            font-size: 3rem;
+          }
+
+          .num {
+            font-size: 2.5rem;
+          }
+        }
+      }
+    }
+  }
+}

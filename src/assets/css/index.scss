@@ -1,0 +1,109 @@
+@import "./vars/colors", "./vars/fonts";
+@import "./components/Header", "./components/Home", "./components/Auth",
+  "./components/Profile", "./components/Posts", "./components/CreatePost",
+  "./components/Post", "./components/Comments", "./components/Replies",
+  "./components/ConfigComment", "./components/UnpublishedPosts",
+  "./components/RegisteredUsers", "./components/ConfigUser",
+  "./components/About", "./components/NotFound", "./components/LikedPosts";
+
+/* Global Styles */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $fontPrimary;
+  background-image: url("https://am3pap006files.storage.live.com/y4mcOd25TQPz3ophzbMFmcWRKYXCSS9EqKVcA6WfxcjxfT_X2qDZ6RDlvNeZhYM5uwAtG3V5VC6oSixV_k2ETNGMQDqnwtwmB0wdeXnVo69mNHbP0Y_EaAMZmEVdLrZ81CBGxUSdxfFMMDsYTcvcDZx2me_fe1Xs0VU2mIp9NzL77vU-eNs3EiYtRA4n7YPMnft?width=1920&height=1280&cropmode=none");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+a {
+  text-decoration: none;
+}
+
+.router-link-active {
+  color: $secondary !important;
+  font-weight: bold !important;
+}
+
+ul,
+ol {
+  padding: 40px;
+
+  li {
+    &:not(:first-child) {
+      margin-top: 20px;
+    }
+  }
+}
+
+img {
+  margin: 10px;
+  box-shadow: 2px 2px 5px $darker;
+  border-radius: 15px;
+  transition: 0.3s ease-in-out;
+
+  @media (max-width: 600px) {
+    width: 200px;
+    height: 130px;
+  }
+
+  @media (min-width: 1700px) {
+    width: 600px;
+    height: 350px;
+  }
+}
+
+button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  border: 1px solid $light-trans;
+  border-radius: 5px;
+  font-family: inherit;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.disabled-btn {
+  margin-top: 20px;
+  width: 150px;
+  padding: 5px;
+  border-width: 1px;
+  border-bottom-right-radius: unset;
+  background-color: rgb(80, 80, 80);
+  color: rgb(109, 109, 109);
+  border-color: rgb(109, 109, 109);
+  cursor: default;
+}
+
+input {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  border: 1px solid $light-trans;
+  border-radius: 5px;
+  transition: 0.3s ease-in-out;
+  font-family: inherit;
+}
+
+.warning-msg {
+  position: absolute;
+  width: 100%;
+  bottom: 100%;
+  background-color: $danger;
+  border: 2px solid $lighter;
+  border-radius: 10px;
+  text-align: center;
+  padding: 5px;
+  color: $lighter;
+  font-weight: bold;
+  letter-spacing: 1px;
+}

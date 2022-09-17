@@ -1,0 +1,323 @@
+.replies-bg {
+  background-color: $darker-trans;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 30;
+
+  .replies-container {
+    background-color: rgb(31, 31, 31);
+    width: 80%;
+    height: 100%;
+    padding: 0 0 30px 0;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 3px 3px 8px $darker;
+
+    @media (max-width: 500px) {
+      width: 95%;
+    }
+
+    .top {
+      box-shadow: 0 10px 8px -4px $darker;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+
+      .close-btn-2 {
+        font-size: 2rem;
+        color: $danger-trans;
+        cursor: pointer;
+        transition: 0.3s ease-in-out;
+
+        &:hover {
+          color: $danger;
+        }
+      }
+
+      p {
+        margin: 10px;
+        color: $lighter;
+      }
+
+      .count {
+        margin: 10px;
+        color: $light;
+      }
+
+      @media (max-width: 600px) {
+        p {
+          display: none;
+        }
+      }
+    }
+
+    .comment-wrapper {
+      height: 70vh;
+      overflow: scroll;
+      overflow-x: hidden;
+      position: relative;
+
+      &::-webkit-scrollbar {
+        width: 5px;
+      }
+      &::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
+      &::-webkit-scrollbar-thumb {
+        background: #888;
+      }
+      &::-webkit-scrollbar-thumb:hover {
+        background: #555;
+      }
+
+      .no-reps {
+        color: $danger;
+        font-weight: bold;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .comment {
+        display: flex;
+        flex-direction: column;
+        width: 95%;
+        margin: 30px auto;
+
+        .info {
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-end;
+
+          .user {
+            display: flex;
+            margin: 10px;
+            align-items: flex-end;
+
+            .avatar {
+              border: 2px solid $lighter-trans;
+              width: 35px;
+              height: 35px;
+              border-radius: 50%;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              font-size: 1.3rem;
+              color: $light;
+            }
+
+            .name-date {
+              display: flex;
+              align-items: center;
+
+              h3 {
+                margin-left: 10px;
+                color: $light;
+              }
+
+              .date {
+                margin-left: 10px;
+                font-size: 0.8rem;
+                color: $light-trans;
+              }
+            }
+          }
+
+          .config {
+            margin: 10px;
+            font-size: 1.2rem;
+            transition: 0.3s ease-in-out;
+            color: $lighter-trans;
+            cursor: pointer;
+
+            &:hover {
+              color: $lighter;
+            }
+          }
+        }
+
+        hr {
+          width: 60%;
+        }
+
+        p {
+          word-wrap: break-word;
+          margin: 10px;
+          color: $light;
+          font-size: 0.9rem;
+        }
+
+        .reply {
+          cursor: pointer;
+          width: 150px;
+
+          span {
+            color: rgb(89, 133, 255);
+            text-decoration: underline;
+
+            small {
+              margin-left: 10px;
+            }
+
+            &:hover {
+              color: rgb(24, 86, 255);
+            }
+          }
+        }
+
+        @media (max-width: 600px) {
+          .info {
+            .user {
+              .avatar {
+                width: 30px;
+                height: 30px;
+                font-size: 1.2rem;
+              }
+
+              .name-date {
+                flex-direction: column;
+                align-items: flex-start;
+
+                h3 {
+                  font-size: 0.8rem;
+                }
+
+                .date {
+                  font-size: 0.7rem;
+                }
+              }
+            }
+
+            .config {
+              font-size: 1rem;
+            }
+          }
+
+          p {
+            font-size: 0.7rem;
+          }
+        }
+      }
+    }
+
+    form {
+      width: 80%;
+      margin: auto;
+      margin-top: 20px;
+      display: flex;
+
+      textarea {
+        width: 80%;
+        border: none;
+        outline: none;
+        background-color: $dark;
+        box-shadow: 2px 2px 6px $darker;
+        padding: 5px;
+        color: $lighter;
+      }
+
+      .reply-btn {
+        margin-left: 5px;
+        width: 100px;
+        color: $light;
+        border-width: 3px;
+        transition: 0.2s ease-in-out;
+
+        &:hover {
+          border-width: 1px;
+          padding: 3px;
+          border-color: $lighter;
+          color: $lighter;
+        }
+      }
+
+      @media (max-width: 600px) {
+        width: 95%;
+
+        textarea {
+          font-size: 0.7rem;
+        }
+      }
+    }
+
+    @media (min-width: 1700px) {
+      .top {
+        padding: 20px;
+
+        .close-btn-2 {
+          font-size: 3.5rem;
+        }
+
+        p {
+          margin: 20px;
+          font-size: 2rem;
+        }
+
+        .count {
+          margin: 20px;
+          font-size: 2rem;
+        }
+      }
+
+      .comment-wrapper {
+        .no-reps {
+          font-size: 2rem;
+        }
+
+        .comment {
+          margin: 50px auto;
+
+          .info {
+            .user {
+              margin: 20px;
+
+              .avatar {
+                width: 70px;
+                height: 70px;
+                font-size: 3rem;
+              }
+
+              .name-date {
+                h3 {
+                  font-size: 2rem;
+                }
+
+                .date {
+                  margin-left: 15px;
+                  font-size: 1.5rem;
+                }
+              }
+            }
+
+            .config {
+              margin: 20px;
+              font-size: 2.5rem;
+            }
+          }
+
+          p {
+            margin: 20px;
+            font-size: 1.5rem;
+          }
+        }
+      }
+
+      form {
+        textarea {
+          font-size: 2rem;
+        }
+
+        .reply-btn {
+          font-size: 1.5rem;
+          width: 200px;
+        }
+      }
+    }
+  }
+}

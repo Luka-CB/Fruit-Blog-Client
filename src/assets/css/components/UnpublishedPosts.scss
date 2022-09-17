@@ -1,0 +1,278 @@
+.unpublished-posts {
+  background-color: $light;
+  width: 80%;
+  min-width: 250px;
+  margin: 50px auto;
+  display: flex;
+  align-items: flex-start;
+  border: 3px solid $danger;
+  box-shadow: 0 15px 12px -4px $darker;
+  position: relative;
+  transition: 0.3s ease-in-out;
+
+  @media (max-width: 900px) {
+    flex-direction: column-reverse;
+  }
+
+  .col-1 {
+    width: 70%;
+    min-height: 60vh;
+    position: relative;
+    transition: 0.3s ease-in-out;
+
+    @media (max-width: 900px) {
+      width: 100%;
+      margin: auto;
+    }
+
+    .post {
+      background-color: $dark;
+      width: 90%;
+      margin: 20px auto;
+      padding: 10px;
+      border: 2px solid $danger;
+      border-radius: 20px;
+      box-shadow: 0 12px 8px -5px $dark;
+      transition: 0.3s ease-in-out;
+
+      @media (min-width: 1700px) {
+        padding: 20px;
+        margin-top: 50px;
+      }
+
+      .post-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        transition: 0.3s ease-in-out;
+
+        h2 {
+          color: $lighter;
+          transition: 0.3s ease-in-out;
+        }
+
+        .edit-icon {
+          color: $lighter-trans;
+          font-size: 1.5rem;
+          transition: 0.3s ease-in-out;
+          cursor: pointer;
+
+          &:hover {
+            color: $lighter;
+          }
+        }
+
+        @media (max-width: 600px) {
+          width: 100%;
+          flex-direction: column-reverse;
+          position: relative;
+
+          h2 {
+            font-size: 1rem;
+            margin-top: 50px;
+          }
+
+          .edit-icon {
+            position: absolute;
+            right: 0;
+            top: 0;
+          }
+        }
+
+        @media (min-width: 1700px) {
+          padding: 20px;
+
+          h2 {
+            font-size: 2.5rem;
+          }
+
+          .edit-icon {
+            color: $lighter-trans;
+            font-size: 3rem;
+          }
+        }
+      }
+
+      .post-body {
+        margin-top: 10px;
+        padding: 0 10px;
+        color: $light;
+        font-size: 0.9rem;
+        transition: 0.3s ease-in-out;
+
+        a {
+          color: red;
+          text-decoration: underline;
+          text-shadow: 1px 1px 1px $light;
+          letter-spacing: 2px;
+        }
+
+        @media (min-width: 1700px) {
+          font-size: 1.5rem;
+        }
+      }
+
+      .post-footer {
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-between;
+        transition: 0.3s ease-in-out;
+
+        .date {
+          color: $light;
+          transition: 0.3s ease-in-out;
+        }
+
+        .btns {
+          width: 250px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          transition: 0.3s ease-in-out;
+
+          .preview-btn {
+            width: 100px;
+            padding: 5px 0;
+            border-width: 3px;
+            border-color: $warning-trans;
+            color: $warning-trans;
+            transition: 0.2s ease-in-out;
+
+            &:hover {
+              border-width: 1px;
+              border-color: $warning;
+              color: $warning;
+              padding: 7px 0;
+            }
+          }
+
+          .publish-btn {
+            width: 100px;
+            padding: 5px 0;
+            border-width: 3px;
+            border-color: $success-trans;
+            color: $success-trans;
+            transition: 0.2s ease-in-out;
+
+            &:hover {
+              border-width: 1px;
+              border-color: $success;
+              color: $success;
+              padding: 7px 0;
+            }
+          }
+
+          @media (max-width: 400px) {
+            flex-direction: column;
+            width: 100%;
+            align-items: unset;
+
+            .preview-btn {
+              width: 100%;
+            }
+
+            .publish-btn {
+              width: 100%;
+              margin-top: 10px;
+            }
+          }
+        }
+
+        @media (max-width: 600px) {
+          flex-direction: column;
+
+          .btns {
+            margin-top: 20px;
+            width: 100%;
+            justify-content: space-around;
+          }
+        }
+
+        @media (min-width: 1700px) {
+          margin-top: 20px;
+          display: flex;
+          justify-content: space-between;
+          transition: 0.3s ease-in-out;
+
+          .date {
+            font-size: 1.5rem;
+          }
+
+          .btns {
+            width: 450px;
+
+            .preview-btn {
+              width: 200px;
+              padding: 10px 0;
+              font-size: 1.5rem;
+            }
+
+            .publish-btn {
+              width: 200px;
+              padding: 10px 0;
+              font-size: 1.5rem;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .col-2 {
+    background-color: $lighter;
+    flex: 1;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 10px 7px -4px $dark;
+    border-radius: 10px;
+    position: relative;
+    padding: 10px;
+    transition: 0.3s ease-in-out;
+
+    .cr-btn {
+      width: 100%;
+      padding: 10px 0;
+      background-color: $success-trans;
+      border-width: 4px;
+      border-color: $success;
+      font-size: 1.1rem;
+      border-radius: 10px;
+      text-shadow: 0 0 1px $darker;
+      letter-spacing: 1px;
+      transition: 0.2s ease-in-out;
+
+      &:hover {
+        border-width: 2px;
+        border-color: $dark-trans;
+        background-color: $success;
+        padding: 12px 0;
+      }
+    }
+
+    .count {
+      margin: 10px;
+      font-weight: bold;
+    }
+
+    @media (max-width: 900px) {
+      width: 90%;
+      margin: 10px auto;
+    }
+
+    @media (min-width: 1700px) {
+      margin: 30px;
+      padding: 20px;
+
+      .cr-btn {
+        padding: 20px 0;
+        font-size: 2rem;
+      }
+
+      .count {
+        font-size: 1.8rem;
+        margin-top: 20px;
+      }
+    }
+  }
+}

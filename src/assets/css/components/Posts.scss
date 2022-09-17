@@ -1,0 +1,490 @@
+.posts-container {
+  width: 80%;
+  min-width: 250px;
+  margin: 50px auto;
+  border: 4px solid $lighter;
+
+  @media (max-width: 500px) {
+    width: 90%;
+  }
+
+  .posts-header {
+    background-color: $dark-trans;
+    backdrop-filter: blur(12px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .left {
+      display: flex;
+      margin: 10px;
+      width: 450px;
+      justify-content: space-between;
+      align-items: center;
+
+      .count {
+        background-color: $light;
+        padding: 5px;
+        border-radius: 10px;
+        box-shadow: 1px 1px 5px $dark;
+        font-weight: bold;
+      }
+
+      .sort {
+        border: 1px solid $light-trans;
+        width: 30px;
+        height: 30px;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.3rem;
+        cursor: pointer;
+        transition: 0.3s ease-in-out;
+
+        .asc {
+          .fa-long-arrow-alt-up {
+            color: gray;
+          }
+        }
+
+        .desc {
+          .fa-long-arrow-alt-down {
+            color: rgb(77, 76, 76);
+          }
+        }
+
+        &:hover {
+          border-color: $lighter;
+        }
+      }
+
+      .search {
+        display: flex;
+        width: 60%;
+
+        .search-input {
+          width: 85%;
+          padding: 10px 0;
+          border-top-right-radius: unset;
+          border-bottom-right-radius: unset;
+          border-right: unset;
+          text-indent: 5px;
+          font-weight: bold;
+          border-color: $light;
+
+          &::placeholder {
+            color: $darker-trans;
+          }
+        }
+
+        .search-icon {
+          flex: 1;
+          border: 1px solid $light;
+          border-radius: 5px;
+          border-top-left-radius: unset;
+          border-bottom-left-radius: unset;
+          border-left: unset;
+          font-size: 1.1rem;
+          color: $light;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    }
+
+    .cr-btn {
+      margin: 10px;
+      padding: 10px 0;
+      width: 150px;
+      color: $light;
+      background-color: $secondary;
+
+      &:hover {
+        color: $lighter;
+        text-shadow: 0 0 1px $lighter;
+      }
+
+      &:focus {
+        box-shadow: inset 1px 1px 7px $darker;
+        text-shadow: 1px 1px 2px $darker;
+      }
+    }
+
+    @media (max-width: 700px) {
+      flex-direction: column;
+
+      .left {
+        flex-direction: column;
+        width: 100%;
+
+        .count {
+          width: 150px;
+          text-align: center;
+        }
+
+        .sort {
+          border: 1px solid $light-trans;
+          width: 150px;
+          height: 40px;
+          border-radius: 10px;
+          font-size: 1.6rem;
+          margin-top: 10px;
+          background-color: $light;
+        }
+
+        .search {
+          margin-top: 10px;
+          width: 90%;
+
+          .search-input {
+            padding: 15px 0;
+          }
+
+          .search-icon {
+            font-size: 1.3rem;
+            padding: 0 5px;
+          }
+        }
+      }
+
+      .cr-btn {
+        margin: 10px;
+        padding: 10px 0;
+        width: 150px;
+      }
+    }
+  }
+
+  .posts-body {
+    background-color: $dark-trans;
+    backdrop-filter: blur(8px);
+    min-height: 60vh;
+    padding: 50px 0;
+
+    .no-posts {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      color: $danger;
+      font-weight: bold;
+      background-color: $dark;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 5px $dark;
+    }
+
+    .post {
+      width: 80%;
+      margin: 50px auto;
+      background-color: $dark;
+      border: 1px solid $light;
+      border-radius: 20px;
+
+      @media (max-width: 500px) {
+        width: 90%;
+      }
+
+      .post-header {
+        display: flex;
+        margin: 10px;
+        justify-content: space-between;
+
+        .title {
+          color: $light;
+        }
+
+        .config {
+          display: flex;
+          width: 200px;
+          justify-content: space-between;
+          align-items: center;
+
+          .edit {
+            color: $lighter-trans;
+            font-size: 1.3rem;
+            transition: 0.3s ease-in-out;
+            cursor: pointer;
+
+            &:hover {
+              color: $lighter;
+            }
+          }
+
+          .unpublish-btn {
+            border: 3px solid $lighter-trans;
+            border-width: 3px;
+            padding: 5px 0;
+            width: 150px;
+            color: $lighter-trans;
+            transition: 0.2s ease-in-out;
+            text-align: center;
+            border-radius: 10px;
+            cursor: pointer;
+
+            &:hover {
+              border-width: 1px;
+              border-color: $lighter;
+              color: $lighter;
+              padding: 7px 0;
+            }
+          }
+        }
+
+        @media (max-width: 700px) {
+          flex-direction: column;
+
+          .title {
+            color: $light;
+          }
+
+          .config {
+            align-self: flex-end;
+            margin-top: 20px;
+          }
+        }
+      }
+
+      .post-body {
+        position: relative;
+
+        .text {
+          color: $light;
+          font-size: 0.8rem;
+          margin: 10px;
+        }
+
+        .feedbacks {
+          display: flex;
+          width: 150px;
+          justify-content: space-between;
+          margin: 10px;
+
+          .likes {
+            .like-fill {
+              color: rgb(48, 111, 248);
+            }
+            .like-outline {
+              color: $light;
+            }
+
+            .num {
+              margin-left: 5px;
+              color: $lighter-trans;
+            }
+          }
+
+          .comments {
+            i {
+              color: $light;
+            }
+
+            .num {
+              margin-left: 5px;
+              color: $light-trans;
+            }
+          }
+        }
+
+        .post-footer {
+          display: flex;
+          margin-top: 10px;
+          justify-content: space-between;
+          align-items: flex-end;
+
+          .date {
+            color: $light-trans;
+            margin: 10px;
+          }
+
+          .more-btn {
+            border-top: 1px solid $light;
+            border-left: 1px solid $light;
+            border-top-left-radius: 20px;
+            width: 150px;
+            padding: 5px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: $light;
+            transition: 0.3s ease-in-out;
+            cursor: pointer;
+
+            i {
+              opacity: 0;
+              transition: 0.3s ease-in-out;
+            }
+
+            .btn-text {
+              transition: 0.3s ease-in-out;
+            }
+
+            &:hover {
+              .btn-text {
+                color: $lighter;
+              }
+
+              i {
+                margin-left: 10px;
+                opacity: 1;
+              }
+            }
+          }
+
+          @media (max-width: 700px) {
+            flex-direction: column;
+
+            .date {
+              align-self: flex-start;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media (min-width: 1700px) {
+    margin: 100px auto;
+    border: 8px solid $lighter;
+
+    .posts-header {
+      .left {
+        margin: 20px;
+        width: 850px;
+
+        .count {
+          padding: 10px;
+          font-size: 2rem;
+          box-shadow: 3px 3px 7px $dark;
+        }
+
+        .sort {
+          border: 2px solid $light-trans;
+          width: 60px;
+          height: 60px;
+          border-radius: 15px;
+          font-size: 2.5rem;
+        }
+
+        .search {
+          .search-input {
+            border-width: 2px;
+            padding: 20px 0;
+            font-size: 2rem;
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
+            text-indent: 10px;
+          }
+
+          .search-icon {
+            border: 2px solid $light;
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+            border-left: unset;
+            font-size: 2rem;
+          }
+        }
+      }
+
+      .cr-btn {
+        margin: 20px;
+        padding: 20px 0;
+        width: 250px;
+        font-size: 1.5rem;
+      }
+    }
+
+    .posts-body {
+      .no-posts {
+        font-size: 2rem;
+      }
+
+      .post {
+        border: 3px solid $light;
+
+        .post-header {
+          margin: 20px;
+
+          .title {
+            font-size: 2rem;
+          }
+
+          .config {
+            width: 350px;
+
+            .edit {
+              font-size: 2.5rem;
+            }
+
+            .unpublish-btn {
+              padding: 10px 0;
+              width: 250px;
+              font-size: 1.5rem;
+            }
+          }
+        }
+
+        .post-body {
+          .text {
+            font-size: 1.5rem;
+            margin: 20px;
+          }
+
+          .feedbacks {
+            width: 250px;
+            margin: 20px;
+
+            .likes {
+              .like-fill {
+                font-size: 3rem;
+              }
+              .like-outline {
+                font-size: 3rem;
+              }
+
+              .num {
+                margin-left: 15px;
+                font-size: 2.5rem;
+              }
+            }
+
+            .comments {
+              i {
+                font-size: 3rem;
+              }
+
+              .num {
+                margin-left: 15px;
+                font-size: 2.5rem;
+              }
+            }
+          }
+
+          .post-footer {
+            margin-top: 30px;
+
+            .date {
+              margin: 20px;
+              font-size: 1.5rem;
+            }
+
+            .more-btn {
+              border-top: 2px solid $light;
+              border-left: 6px solid $light;
+              border-top-left-radius: 30px;
+              width: 250px;
+              padding: 10px 0;
+              font-size: 1.5rem;
+
+              i {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

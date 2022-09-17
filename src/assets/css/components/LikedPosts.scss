@@ -1,0 +1,318 @@
+.liked-posts-container {
+  background-color: $light;
+  width: 90%;
+  min-width: 250px;
+  margin: 50px auto;
+  padding: 20px;
+  border-top: 5px solid $darker;
+  border-bottom: 5px solid $darker;
+  border-radius: 20px;
+  box-shadow: 5px 5px 8px $darker;
+  transition: 0.3s ease-in-out;
+
+  .liked-posts__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.3s ease-in-out;
+
+    .back {
+      font-size: 2.5rem;
+      color: $darker-trans;
+      cursor: pointer;
+      transition: 0.2s ease-in-out;
+
+      &:hover {
+        color: $darker;
+      }
+    }
+  }
+
+  .liked-posts__wrapper {
+    width: 100%;
+    min-height: 60vh;
+    position: relative;
+    transition: 0.3s ease-in-out;
+
+    .liked-posts__post {
+      width: 80%;
+      margin: 50px auto;
+      background-color: $dark;
+      border: 1px solid $light;
+      border-radius: 20px;
+      box-shadow: 0 12px 8px -4px $darker;
+      transition: 0.3s ease-in-out;
+
+      .post-header {
+        display: flex;
+        margin: 10px;
+        justify-content: space-between;
+        align-items: center;
+        transition: 0.3s ease-in-out;
+
+        .title {
+          color: $light;
+          transition: 0.3s ease-in-out;
+        }
+
+        .unlike {
+          border: 3px solid $lighter-trans;
+          border-width: 3px;
+          padding: 5px 0;
+          width: 150px;
+          color: $lighter-trans;
+          transition: 0.2s ease-in-out;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 10px;
+          cursor: pointer;
+          transition: 0.3s ease-in-out;
+
+          &:hover {
+            border-width: 1px;
+            border-color: $lighter;
+            color: $lighter;
+            padding: 7px 0;
+          }
+        }
+      }
+
+      .post-body {
+        position: relative;
+        transition: 0.3s ease-in-out;
+
+        .text {
+          color: $light;
+          font-size: 0.8rem;
+          margin: 10px;
+          transition: 0.3s ease-in-out;
+        }
+
+        .feedbacks {
+          display: flex;
+          width: 150px;
+          justify-content: space-between;
+          margin: 10px;
+          transition: 0.3s ease-in-out;
+
+          .likes {
+            .like-fill {
+              color: rgb(48, 111, 248);
+            }
+            .like-outline {
+              color: $light;
+            }
+
+            .num {
+              margin-left: 5px;
+              color: $lighter-trans;
+            }
+          }
+
+          .comments {
+            i {
+              color: $light;
+            }
+
+            .num {
+              margin-left: 5px;
+              color: $light-trans;
+            }
+          }
+        }
+
+        .post-footer {
+          display: flex;
+          margin-top: 10px;
+          justify-content: space-between;
+          align-items: flex-end;
+          transition: 0.3s ease-in-out;
+
+          .date {
+            color: $light-trans;
+            margin: 10px;
+            transition: 0.3s ease-in-out;
+          }
+
+          .more-btn {
+            border-top: 1px solid $light;
+            border-left: 1px solid $light;
+            border-top-left-radius: 20px;
+            width: 150px;
+            padding: 5px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: $light;
+            transition: 0.3s ease-in-out;
+            cursor: pointer;
+
+            i {
+              opacity: 0;
+              transition: 0.3s ease-in-out;
+            }
+
+            .btn-text {
+              transition: 0.3s ease-in-out;
+            }
+
+            &:hover {
+              .btn-text {
+                color: $lighter;
+              }
+
+              i {
+                margin-left: 10px;
+                opacity: 1;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media (min-width: 1700px) {
+    margin: 100px auto;
+    box-shadow: 10px 10px 12px $darker;
+
+    .liked-posts__header {
+      padding: 20px;
+
+      .back {
+        font-size: 4.5rem;
+      }
+
+      .count {
+        font-size: 2rem;
+      }
+    }
+
+    .liked-posts__wrapper {
+      .liked-posts__post {
+        margin: 100px auto;
+        box-shadow: 0 15px 10px -4px $darker;
+
+        .post-header {
+          margin: 20px;
+
+          .title {
+            font-size: 2rem;
+          }
+
+          .unlike {
+            padding: 10px 0;
+            width: 250px;
+            font-size: 1.5rem;
+          }
+        }
+
+        .post-body {
+          .text {
+            font-size: 1.5rem;
+            margin: 20px;
+          }
+
+          .feedbacks {
+            width: 250px;
+            margin: 20px;
+
+            .likes {
+              .like-fill {
+                font-size: 3rem;
+              }
+              .like-outline {
+                font-size: 3rem;
+              }
+
+              .num {
+                margin-left: 15px;
+                font-size: 2.5rem;
+              }
+            }
+
+            .comments {
+              i {
+                font-size: 3rem;
+              }
+
+              .num {
+                margin-left: 15px;
+                font-size: 2.5rem;
+              }
+            }
+          }
+
+          .post-footer {
+            margin-top: 20px;
+
+            .date {
+              font-size: 1.5rem;
+              margin: 20px;
+            }
+
+            .more-btn {
+              border-top-left-radius: 30px;
+              width: 250px;
+              padding: 10px 0;
+              font-size: 1.5rem;
+
+              i {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 600px) {
+    .liked-posts__wrapper {
+      .liked-posts__post {
+        width: 100%;
+
+        .post-header {
+          flex-direction: column;
+
+          .title {
+            align-self: flex-start;
+            font-size: 0.9rem;
+          }
+
+          .unlike {
+            margin-top: 20px;
+            align-self: flex-end;
+            width: 150px;
+            font-size: 0.8rem;
+          }
+        }
+
+        .post-body {
+          .post-footer {
+            margin-top: 20px;
+            flex-direction: column;
+
+            .date {
+              align-self: flex-start;
+              font-size: 0.8rem;
+            }
+
+            .more-btn {
+              margin-top: 20px;
+              border-top-left-radius: 20px;
+              width: 150px;
+              padding: 5px 0;
+              font-size: 0.8rem;
+
+              i {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

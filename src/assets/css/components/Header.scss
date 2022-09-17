@@ -1,0 +1,318 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  transition: 0.3s ease-in-out;
+
+  .logo {
+    width: 30%;
+    padding: 10px;
+
+    .logo-main {
+      box-shadow: none;
+      width: 200px;
+      height: 100px;
+      transition: 0.3s ease-in-out;
+
+      @media (max-width: 500px) {
+        width: 150px;
+        height: 80px;
+      }
+    }
+
+    .link {
+      text-decoration: none;
+
+      .logo-alt {
+        box-shadow: none;
+        width: 150px;
+        height: 130px;
+        transition: 0.3s ease-in-out;
+
+        @media (max-width: 500px) {
+          width: 100px;
+          height: 80px;
+        }
+      }
+    }
+  }
+
+  .mobile-nav {
+    display: none;
+  }
+
+  .main-nav {
+    width: 50%;
+    margin: 5px 10px;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: $primary-trans;
+    backdrop-filter: blur(7px);
+    border-top: 6px solid $secondary;
+    border-radius: 15px;
+    border-left: 3px solid $secondary-trans;
+    box-shadow: 0 15px 12px -4px $primary-trans;
+    transition: 0.3s ease-in-out;
+
+    .page_links {
+      width: 60%;
+      display: flex;
+      justify-content: space-around;
+      font-size: $m;
+      font-weight: $bold;
+
+      .link {
+        color: $lighter;
+        transition: all 0.2s ease-in-out;
+        cursor: pointer;
+        text-decoration: none;
+
+        &:hover {
+          color: $secondary;
+        }
+      }
+    }
+
+    .auth_link {
+      width: 20%;
+      text-align: center;
+      position: relative;
+
+      .auth_btn {
+        background-color: $light;
+        border: 2px solid $secondary;
+        box-shadow: 0 0 5px $secondary;
+        width: 70px;
+        height: 70px;
+        border-radius: 70px;
+        transition: 0.3s ease-in-out;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+
+        &:hover {
+          background-color: $lighter;
+        }
+
+        .fa-user,
+        .fa-user-tie {
+          font-size: 2rem;
+        }
+
+        .link {
+          text-decoration: none;
+          color: $secondary;
+        }
+      }
+      .dropdown {
+        background-color: $light;
+        position: absolute;
+        top: 0;
+        right: 100%;
+        min-width: 100px;
+        padding: 15px 5px;
+        box-shadow: 2px 2px 7px $dark;
+
+        .links {
+          display: flex;
+          flex-direction: column;
+          padding: 0 5px 5px 5px;
+
+          .link {
+            margin-top: 5px;
+            text-decoration: none;
+            color: grey;
+            transition: all 0.3s ease-in-out;
+
+            &:hover {
+              color: $darker;
+            }
+          }
+        }
+
+        p {
+          margin-top: 5px;
+          color: grey;
+          cursor: pointer;
+          transition: all 0.3s ease-in-out;
+
+          &:hover {
+            color: $darker;
+          }
+        }
+      }
+    }
+
+    @media (min-width: 1700px) {
+      margin: 15px;
+      border-top: 12px solid $secondary;
+      border-left: 6px solid $secondary-trans;
+
+      .page_links {
+        font-size: 2.5rem;
+      }
+
+      .auth_link {
+        .auth_btn {
+          width: 120px;
+          height: 120px;
+          border-radius: 50%;
+          font-size: 1.8rem;
+
+          .fa-user,
+          .fa-user-tie {
+            font-size: 4rem;
+          }
+        }
+
+        .dropdown {
+          background-color: $light;
+          position: absolute;
+          top: 0;
+          right: 100%;
+          min-width: 100px;
+          padding: 15px 5px;
+          box-shadow: 2px 2px 7px $dark;
+
+          .links {
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+
+            .link {
+              font-size: 2rem;
+            }
+          }
+
+          p {
+            font-size: 2rem;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 700px) {
+    .main-nav {
+      display: none;
+    }
+
+    .mobile-nav {
+      z-index: 10;
+      display: block;
+      width: 60px;
+      margin: 0;
+      padding: 15px;
+      background-color: $primary;
+      border-top: 6px solid $secondary;
+      border-radius: 15px;
+      border-left: 3px solid $secondary-trans;
+      box-shadow: 0 15px 12px -4px $primary-trans;
+      position: initial;
+      margin: 10px;
+      transition: 0.3s ease-in-out;
+
+      .menu-icon {
+        text-align: center;
+        font-size: 2rem;
+        color: $darker-trans;
+        cursor: pointer;
+        transition: 0.2s ease-in-out;
+
+        &:hover {
+          color: $darker;
+        }
+      }
+
+      .nav-container-bg {
+        position: fixed;
+        left: 0;
+        top: 0;
+        background-color: $darker-trans;
+        width: 100%;
+        height: 100%;
+        z-index: 5;
+
+        .nav-container {
+          background-color: $dark;
+          width: 250px;
+          position: absolute;
+          right: 0;
+          height: 100%;
+          box-shadow: -5px 0 8px $darker;
+          border-top: 4px solid $light;
+          border-bottom: 4px solid $light;
+          border-top-left-radius: 15px;
+          border-bottom-left-radius: 15px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+          .mobile-nav-logo {
+            width: 200px;
+            height: 100px;
+            box-shadow: none;
+          }
+
+          .links {
+            margin-top: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .link {
+              color: $light;
+              margin-top: 20px;
+              padding: 3px 0;
+            }
+
+            .router-link-active {
+              color: $lighter !important;
+              border: 1px dotted $lighter;
+              padding: 3px 25px;
+              border-radius: 10px;
+            }
+          }
+
+          .auth {
+            margin-top: 200px;
+            border: 3px solid $lighter-trans;
+            width: 95%;
+            padding: 5px 0;
+            border-radius: 10px;
+            text-align: center;
+            color: $lighter-trans;
+            cursor: pointer;
+            transition: 0.2s ease-in-out;
+
+            a {
+              color: $lighter-trans;
+            }
+
+            &:hover {
+              border: 1px solid $lighter;
+              color: $lighter;
+              padding: 7px 0;
+
+              a {
+                color: $lighter;
+              }
+            }
+          }
+
+          @media (max-width: 300px) {
+            width: 200px;
+
+            .mobile-nav-logo {
+              width: 150px;
+              height: 70px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

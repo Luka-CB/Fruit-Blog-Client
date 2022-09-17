@@ -1,0 +1,435 @@
+.config-user-bg {
+  background-color: $darker-trans;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+
+  .config-user-container {
+    background-color: $dark;
+    width: 450px;
+    min-width: 240px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-top: 5px solid $light;
+    border-bottom: 5px solid $light;
+    border-radius: 15px;
+    box-shadow: 0 15px 12px -4px $darker;
+    padding: 15px;
+
+    @media (max-width: 500px) {
+      width: 80%;
+    }
+
+    .close-btn {
+      color: $danger-trans;
+      position: absolute;
+      top: 0;
+      left: 0;
+      font-size: 1.7rem;
+      margin: 3px;
+      cursor: pointer;
+      transition: 0.2s ease-in-out;
+
+      &:hover {
+        color: $danger;
+      }
+    }
+
+    .del-user {
+      display: flex;
+      margin: 30px 10px 20px 10px;
+      justify-content: space-between;
+      align-items: center;
+
+      h3 {
+        color: $danger;
+        letter-spacing: 1px;
+
+        span {
+          font-size: 1.5rem;
+          font-style: italic;
+          text-shadow: 0px 1px 1px $light;
+        }
+      }
+
+      #middle {
+        font-size: 1.3rem;
+        letter-spacing: 4px;
+        color: $danger;
+        font-weight: bold;
+      }
+
+      .del-btn {
+        border: 3px solid $danger-trans;
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.2rem;
+        color: $danger-trans;
+        cursor: pointer;
+        transition: 0.2s ease-in-out;
+
+        &:hover {
+          color: $danger;
+          border-width: 1px;
+          border-color: $danger;
+        }
+      }
+
+      @media (max-width: 600px) {
+        flex-direction: column;
+
+        h3 {
+          font-size: 0.9rem;
+
+          span {
+            font-size: 1.1rem;
+            font-style: italic;
+            text-shadow: 0px 1px 1px $light;
+          }
+        }
+
+        #middle {
+          display: none;
+        }
+
+        .del-btn {
+          margin-top: 20px;
+          width: 100%;
+        }
+      }
+    }
+
+    .upd-user {
+      margin: 20px 0;
+
+      form {
+        width: 100%;
+
+        .input-box {
+          display: flex;
+          flex-direction: column;
+          margin-top: 20px;
+
+          label {
+            color: $light;
+            padding: 10px;
+          }
+
+          input {
+            padding: 10px;
+            font-size: 1.1rem;
+            color: $light;
+
+            &:focus {
+              border-color: $light;
+            }
+          }
+        }
+
+        .input-checkbox {
+          display: flex;
+          align-items: center;
+          margin-top: 20px;
+
+          label {
+            color: $light;
+            padding: 10px;
+          }
+
+          input[type="checkbox"] {
+            transform: scale(1.5);
+          }
+        }
+
+        .upd {
+          margin-top: 20px;
+          width: 150px;
+          height: 40px;
+          border: 3px solid $warning-trans;
+          transition: 0.2s ease-in-out;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 10px;
+          cursor: pointer;
+
+          .btn {
+            width: 100%;
+            height: 100%;
+            border: none;
+            color: $warning-trans;
+          }
+
+          &:hover {
+            border-width: 1px;
+            border-color: $warning;
+
+            .btn {
+              color: $warning;
+            }
+          }
+        }
+
+        @media (max-width: 500px) {
+          .input-box {
+            display: flex;
+            flex-direction: column;
+            margin-top: 20px;
+
+            label {
+              font-size: 0.8rem;
+            }
+
+            input {
+              padding: 10px;
+              font-size: 0.8rem;
+            }
+          }
+
+          .input-checkbox {
+            label {
+              font-size: 0.8rem;
+            }
+
+            input[type="checkbox"] {
+              transform: scale(1.3);
+            }
+          }
+
+          .upd {
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    .del-warning-bg {
+      background-color: $darker-trans;
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-radius: 15px;
+      width: 100%;
+      height: 100%;
+
+      .del-warning-container {
+        background-color: $dark;
+        width: 80%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-top: 3px solid $danger;
+        border-bottom: 3px solid $danger;
+        border-radius: 15px;
+        padding: 20px;
+        box-shadow: 0 12px 9px -4px $darker;
+
+        p {
+          text-align: center;
+          color: $light;
+          letter-spacing: 1px;
+
+          span {
+            color: $danger;
+            font-size: 1.5rem;
+            letter-spacing: 2px;
+            font-style: italic;
+            text-shadow: 1px 2px 1px $darker;
+          }
+        }
+
+        .btns {
+          margin-top: 20px;
+          display: flex;
+          justify-content: space-between;
+
+          .yes {
+            border: 3px solid $danger-trans;
+            width: 120px;
+            padding: 5px 0;
+            border-radius: 10px;
+            text-align: center;
+            color: $danger-trans;
+            cursor: pointer;
+            transition: 0.2s ease-in-out;
+
+            &:hover {
+              border: 1px solid $danger;
+              color: $danger;
+              padding: 7px 0;
+            }
+          }
+
+          .no {
+            border: 3px solid $warning-trans;
+            width: 120px;
+            padding: 5px 0;
+            border-radius: 10px;
+            text-align: center;
+            color: $warning-trans;
+            cursor: pointer;
+            transition: 0.2s ease-in-out;
+
+            &:hover {
+              border: 1px solid $warning;
+              color: $warning;
+              padding: 7px 0;
+            }
+          }
+        }
+
+        @media (max-width: 500px) {
+          width: 95%;
+
+          p {
+            font-size: 0.8rem;
+
+            span {
+              font-size: 1.2rem;
+            }
+          }
+
+          .btns {
+            .yes {
+              width: 80px;
+            }
+
+            .no {
+              width: 80px;
+            }
+          }
+        }
+      }
+    }
+
+    @media (min-width: 1700px) {
+      width: 950px;
+      border-radius: 2px;
+      padding: 20px;
+
+      .close-btn {
+        font-size: 2.5rem;
+        margin: 5px;
+      }
+
+      .del-user {
+        display: flex;
+        margin: 50px 20px 30px 20px;
+
+        h3 {
+          font-size: 2rem;
+          letter-spacing: 3px;
+
+          span {
+            font-size: 3rem;
+            text-shadow: 2px 2px 2px $light;
+          }
+        }
+
+        #middle {
+          font-size: 2rem;
+          letter-spacing: 10px;
+        }
+
+        .del-btn {
+          width: 80px;
+          height: 80px;
+          border-radius: 20px;
+          font-size: 2.5rem;
+        }
+      }
+
+      .upd-user {
+        margin: 40px 0;
+
+        form {
+          .input-box {
+            margin-top: 40px;
+
+            label {
+              font-size: 1.5rem;
+            }
+
+            input {
+              padding: 20px;
+              font-size: 1.5rem;
+            }
+          }
+
+          .input-checkbox {
+            margin-top: 20px;
+
+            label {
+              font-size: 1.5rem;
+            }
+
+            input {
+              margin-left: 15px;
+            }
+
+            input[type="checkbox"] {
+              transform: scale(2.5);
+            }
+          }
+
+          .upd {
+            margin-top: 40px;
+            width: 350px;
+            height: 60px;
+            border-radius: 15px;
+
+            .btn {
+              font-size: 1.5rem;
+            }
+          }
+        }
+      }
+
+      .del-warning-bg {
+        .del-warning-container {
+          border-radius: 20px;
+          padding: 30px;
+
+          p {
+            font-size: 1.5rem;
+            letter-spacing: 3px;
+
+            span {
+              font-size: 2.5rem;
+              letter-spacing: 4px;
+              text-shadow: 2px 2px 2px $darker;
+            }
+          }
+
+          .btns {
+            margin-top: 50px;
+
+            .yes {
+              width: 250px;
+              padding: 10px 0;
+              border-radius: 15px;
+              font-size: 1.5rem;
+            }
+
+            .no {
+              width: 250px;
+              padding: 10px 0;
+              border-radius: 15px;
+              font-size: 1.5rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
