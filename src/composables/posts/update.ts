@@ -50,6 +50,7 @@ export const useUpdatePostStatus = () => {
     try {
       const { data } = await axios.put(
         `${process.env.VUE_APP_BASE_URL}/api/posts/update/status/${id}`,
+        {},
         config
       );
 
