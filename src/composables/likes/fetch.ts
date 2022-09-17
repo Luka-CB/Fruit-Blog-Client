@@ -14,7 +14,9 @@ export const useFetchUserLike = () => {
     isLiked.value = false;
 
     try {
-      const { data } = await axios.get(`/api/likes/fetchuserlike/${postId}`);
+      const { data } = await axios.get(
+        `${process.env.VUE_APP_BASE_URL}/api/likes/fetchuserlike/${postId}`
+      );
 
       if (data) {
         loading.value = false;

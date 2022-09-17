@@ -11,7 +11,9 @@ export const useDeleteComment = () => {
     error.value = null;
 
     try {
-      const { data } = await axios.delete(`/api/comments/delete/${id}`);
+      const { data } = await axios.delete(
+        `${process.env.VUE_APP_BASE_URL}/api/comments/delete/${id}`
+      );
 
       if (data) {
         loading.value = false;
@@ -40,7 +42,9 @@ export const useDeleteReply = () => {
     error.value = null;
 
     try {
-      const { data } = await axios.delete(`/api/comments/replies/delete/${id}`);
+      const { data } = await axios.delete(
+        `${process.env.VUE_APP_BASE_URL}/api/comments/replies/delete/${id}`
+      );
 
       if (data) {
         loading.value = false;

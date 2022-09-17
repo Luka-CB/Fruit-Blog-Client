@@ -24,7 +24,7 @@ export default () => {
 
     try {
       const { data } = await axios.post(
-        "/api/users/register",
+        `${process.env.VUE_APP_BASE_URL}/api/users/register`,
         userData,
         config
       );

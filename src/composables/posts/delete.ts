@@ -11,7 +11,9 @@ export default () => {
     error.value = null;
 
     try {
-      const { data } = await axios.delete(`/api/posts/delete/${id}`);
+      const { data } = await axios.delete(
+        `${process.env.VUE_APP_BASE_URL}/api/posts/delete/${id}`
+      );
 
       if (data) {
         (loading.value = false), (success.value = true);

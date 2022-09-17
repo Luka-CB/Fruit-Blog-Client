@@ -34,7 +34,7 @@ export const useFetchAllPosts = () => {
 
     try {
       const { data } = await axios.get(
-        `/api/posts/fetchall?searchQ=${queries.searchQuery}&sort=${queries.sort}`
+        `${process.env.VUE_APP_BASE_URL}/api/posts/fetchall?searchQ=${queries.searchQuery}&sort=${queries.sort}`
       );
 
       if (data) {
@@ -78,7 +78,9 @@ export const useFetchOnePost = () => {
     error.value = null;
 
     try {
-      const { data } = await axios.get(`/api/posts/fetchone/${id}`);
+      const { data } = await axios.get(
+        `${process.env.VUE_APP_BASE_URL}/api/posts/fetchone/${id}`
+      );
 
       if (data) {
         const newData = {
@@ -109,7 +111,9 @@ export const useFetchSomePosts = () => {
     loading.value = true;
 
     try {
-      const { data } = await axios.get(`/api/posts/fetchsome?postId=${id}`);
+      const { data } = await axios.get(
+        `${process.env.VUE_APP_BASE_URL}/api/posts/fetchsome?postId=${id}`
+      );
 
       if (data) {
         const newData = data.map((post: postIFace) => {
@@ -148,7 +152,9 @@ export const useFetchLatestPost = () => {
     error.value = null;
 
     try {
-      const { data } = await axios.get("/api/posts/latest");
+      const { data } = await axios.get(
+        `${process.env.VUE_APP_BASE_URL}/api/posts/latest`
+      );
 
       if (data) {
         const newData = {
@@ -183,7 +189,9 @@ export const useFetchLikedPosts = () => {
     error.value = null;
 
     try {
-      const { data } = await axios.get("/api/posts/fetchliked");
+      const { data } = await axios.get(
+        `${process.env.VUE_APP_BASE_URL}/api/posts/fetchliked`
+      );
 
       if (data) {
         const posts = data.posts.sort((a: postIFace, b: postIFace) => {
@@ -246,7 +254,9 @@ export const useFetchDraftPosts = () => {
     error.value = null;
 
     try {
-      const { data } = await axios.get("/api/posts/fetchdraft");
+      const { data } = await axios.get(
+        `${process.env.VUE_APP_BASE_URL}/api/posts/fetchdraft`
+      );
 
       if (data) {
         const newData = data.posts.map((post: postIFace) => {

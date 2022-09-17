@@ -9,7 +9,9 @@ export const useDeleteLike = () => {
     loading.value = true;
 
     try {
-      const { data } = await axios.delete(`/api/likes/delete/${id}`);
+      const { data } = await axios.delete(
+        `${process.env.VUE_APP_BASE_URL}/api/likes/delete/${id}`
+      );
 
       if (data) {
         loading.value = false;
@@ -32,7 +34,9 @@ export const useUnlikePost = () => {
     loading.value = true;
 
     try {
-      const { data } = await axios.delete(`/api/likes/unlike/${id}`);
+      const { data } = await axios.delete(
+        `${process.env.VUE_APP_BASE_URL}/api/likes/unlike/${id}`
+      );
 
       if (data) {
         loading.value = false;

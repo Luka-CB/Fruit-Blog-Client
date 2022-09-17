@@ -14,7 +14,9 @@ export const useFetchAllComments = () => {
     error.value = null;
 
     try {
-      const { data } = await axios.get(`/api/comments/fetchall?postId=${id}`);
+      const { data } = await axios.get(
+        `${process.env.VUE_APP_BASE_URL}/api/comments/fetchall?postId=${id}`
+      );
 
       interface commentIFace {
         body: string;
@@ -58,7 +60,9 @@ export const useFetchAllReplies = () => {
     error.value = null;
 
     try {
-      const { data } = await axios.get(`/api/comments/replies/fetchall/${id}`);
+      const { data } = await axios.get(
+        `${process.env.VUE_APP_BASE_URL}/api/comments/replies/fetchall/${id}`
+      );
 
       interface repliesIFace {
         reply: string;

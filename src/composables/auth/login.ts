@@ -22,7 +22,11 @@ export default () => {
     error.value = null;
 
     try {
-      const { data } = await axios.post("/api/users/login", userData, config);
+      const { data } = await axios.post(
+        `${process.env.VUE_APP_BASE_URL}/api/users/login`,
+        userData,
+        config
+      );
 
       if (data) {
         localStorage.setItem("userInfo", JSON.stringify(data));

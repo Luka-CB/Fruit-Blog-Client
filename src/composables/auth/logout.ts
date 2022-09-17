@@ -9,7 +9,9 @@ export default () => {
     loading.value = true;
 
     try {
-      const { data } = await axios.get("/api/users/logout");
+      const { data } = await axios.get(
+        `${process.env.VUE_APP_BASE_URL}/api/users/logout`
+      );
 
       if (data) {
         localStorage.removeItem("userInfo");

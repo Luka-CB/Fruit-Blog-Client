@@ -31,7 +31,9 @@ export const useFetchUser = () => {
     error.value = null;
 
     try {
-      const { data } = await axios.get("/api/users/current");
+      const { data } = await axios.get(
+        `${process.env.VUE_APP_BASE_URL}/api/users/current`
+      );
 
       if (data) {
         const newData = {
@@ -72,7 +74,7 @@ export const useFetchUsers = () => {
 
     try {
       const { data } = await axios.get(
-        `/api/users/fetchall?searchQ=${queries.searchQ}&sort=${queries.sort}&page=${queries.page}`
+        `${process.env.VUE_APP_BASE_URL}/api/users/fetchall?searchQ=${queries.searchQ}&sort=${queries.sort}&page=${queries.page}`
       );
 
       if (data) {

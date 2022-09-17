@@ -18,7 +18,7 @@ export const useCreateComment = () => {
 
     try {
       const { data } = await axios.post(
-        `/api/comments/create?postId=${id}`,
+        `${process.env.VUE_APP_BASE_URL}/api/comments/create?postId=${id}`,
         { comment },
         config
       );
@@ -51,7 +51,7 @@ export const useCreateReply = () => {
 
     try {
       const { data } = await axios.post(
-        `/api/comments/replies/create?commentId=${id}`,
+        `${process.env.VUE_APP_BASE_URL}/api/comments/replies/create?commentId=${id}`,
         { reply },
         config
       );

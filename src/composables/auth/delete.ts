@@ -11,7 +11,9 @@ export const useDeleteAccount = () => {
     error.value = null;
 
     try {
-      const { data } = await axios.delete("/api/users/delete");
+      const { data } = await axios.delete(
+        `${process.env.VUE_APP_BASE_URL}/api/users/delete`
+      );
 
       if (data) {
         loading.value = false;
@@ -41,7 +43,9 @@ export const useDeleteAccountByAdmin = () => {
     error.value = null;
 
     try {
-      const { data } = await axios.delete(`/api/users/admin/delete/${id}`);
+      const { data } = await axios.delete(
+        `${process.env.VUE_APP_BASE_URL}/api/users/admin/delete/${id}`
+      );
 
       if (data) {
         loading.value = false;

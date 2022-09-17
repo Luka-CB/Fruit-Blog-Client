@@ -25,7 +25,11 @@ export const useUpdateAccount = () => {
     error.value = null;
 
     try {
-      const { data } = await axios.put("/api/users/update", userData, config);
+      const { data } = await axios.put(
+        `${process.env.VUE_APP_BASE_URL}/api/users/update`,
+        userData,
+        config
+      );
 
       if (data) {
         loading.value = false;
@@ -61,7 +65,7 @@ export const useEditAccountByAdmin = () => {
 
     try {
       const { data } = await axios.put(
-        `/api/users/admin/edit/${userData.id}`,
+        `${process.env.VUE_APP_BASE_URL}/api/users/admin/edit/${userData.id}`,
         userData,
         config
       );

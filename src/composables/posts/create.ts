@@ -22,7 +22,11 @@ export default () => {
     error.value = null;
 
     try {
-      const { data } = await axios.post("/api/posts/create", postData, config);
+      const { data } = await axios.post(
+        `${process.env.VUE_APP_BASE_URL}/api/posts/create`,
+        postData,
+        config
+      );
 
       if (data) {
         loading.value = false;

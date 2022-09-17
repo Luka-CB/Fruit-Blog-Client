@@ -18,7 +18,7 @@ export const useUpdateComment = () => {
 
     try {
       const { data } = await axios.put(
-        `/api/comments/update/${id}`,
+        `${process.env.VUE_APP_BASE_URL}/api/comments/update/${id}`,
         { body },
         config
       );
@@ -50,7 +50,7 @@ export const useUpdateReply = () => {
 
     try {
       const { data } = await axios.put(
-        `/api/comments/replies/update/${id}`,
+        `${process.env.VUE_APP_BASE_URL}/api/comments/replies/update/${id}`,
         { reply },
         config
       );
