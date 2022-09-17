@@ -16,6 +16,7 @@ export default () => {
     try {
       const { data } = await axios.post(
         `${process.env.VUE_APP_BASE_URL}/api/likes/create?postId=${id}`,
+        {},
         config
       );
 
