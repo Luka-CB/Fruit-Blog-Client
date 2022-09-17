@@ -1,6 +1,11 @@
 import { ref } from "vue";
 import axios, { AxiosError } from "axios";
 
+const config = {
+  headers: { "Content-Type": "application/json" },
+  withCredentials: true,
+};
+
 export default () => {
   const loading = ref(false);
   const success = ref(false);
@@ -12,7 +17,8 @@ export default () => {
 
     try {
       const { data } = await axios.delete(
-        `${process.env.VUE_APP_BASE_URL}/api/posts/delete/${id}`
+        `${process.env.VUE_APP_BASE_URL}/api/posts/delete/${id}`,
+        config
       );
 
       if (data) {

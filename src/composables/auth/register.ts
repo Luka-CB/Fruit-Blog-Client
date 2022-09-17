@@ -7,16 +7,15 @@ interface userData {
   password: string | "";
 }
 
+const config = {
+  headers: { "Content-Type": "application/json" },
+  withCredentials: true,
+};
+
 export default () => {
   const success = ref(false);
   const error = ref(null);
   const loading = ref(false);
-
-  const config = {
-    headers: {
-      "Content-Type": "application/json",
-    },
-  };
 
   const register = async (userData: userData) => {
     loading.value = true;

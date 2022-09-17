@@ -1,6 +1,11 @@
 import { ref } from "vue";
 import axios, { AxiosError } from "axios";
 
+const config = {
+  headers: { "Content-Type": "application/json" },
+  withCredentials: true,
+};
+
 export const useDeleteAccount = () => {
   const success = ref(false);
   const error = ref(null);
@@ -12,7 +17,8 @@ export const useDeleteAccount = () => {
 
     try {
       const { data } = await axios.delete(
-        `${process.env.VUE_APP_BASE_URL}/api/users/delete`
+        `${process.env.VUE_APP_BASE_URL}/api/users/delete`,
+        config
       );
 
       if (data) {
@@ -44,7 +50,8 @@ export const useDeleteAccountByAdmin = () => {
 
     try {
       const { data } = await axios.delete(
-        `${process.env.VUE_APP_BASE_URL}/api/users/admin/delete/${id}`
+        `${process.env.VUE_APP_BASE_URL}/api/users/admin/delete/${id}`,
+        config
       );
 
       if (data) {

@@ -2,9 +2,8 @@ import { ref } from "vue";
 import axios, { AxiosError } from "axios";
 
 const config = {
-  headers: {
-    "Content-Type": "application/json",
-  },
+  headers: { "Content-Type": "application/json" },
+  withCredentials: true,
 };
 
 export const useCreateComment = () => {

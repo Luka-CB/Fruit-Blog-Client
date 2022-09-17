@@ -17,6 +17,11 @@ interface postIFace {
   updateddAt: string;
 }
 
+const config = {
+  headers: { "Content-Type": "application/json" },
+  withCredentials: true,
+};
+
 export const useFetchAllPosts = () => {
   const count = ref(0);
   const loading = ref(false);
@@ -190,7 +195,8 @@ export const useFetchLikedPosts = () => {
 
     try {
       const { data } = await axios.get(
-        `${process.env.VUE_APP_BASE_URL}/api/posts/fetchliked`
+        `${process.env.VUE_APP_BASE_URL}/api/posts/fetchliked`,
+        config
       );
 
       if (data) {
@@ -255,7 +261,8 @@ export const useFetchDraftPosts = () => {
 
     try {
       const { data } = await axios.get(
-        `${process.env.VUE_APP_BASE_URL}/api/posts/fetchdraft`
+        `${process.env.VUE_APP_BASE_URL}/api/posts/fetchdraft`,
+        config
       );
 
       if (data) {

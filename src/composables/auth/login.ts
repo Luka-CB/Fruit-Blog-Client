@@ -6,16 +6,15 @@ interface userData {
   password: string | "";
 }
 
+const config = {
+  headers: { "Content-Type": "application/json" },
+  withCredentials: true,
+};
+
 export default () => {
   const success = ref<boolean>(false);
   const error = ref(null);
   const loading = ref<boolean>(false);
-
-  const config = {
-    headers: {
-      "Content-Type": "application/json",
-    },
-  };
 
   const login = async (userData: userData) => {
     loading.value = true;

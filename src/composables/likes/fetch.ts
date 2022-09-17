@@ -4,6 +4,12 @@ import axios, { AxiosError } from "axios";
 interface likeIFace {
   id: string;
 }
+
+const config = {
+  headers: { "Content-Type": "application/json" },
+  withCredentials: true,
+};
+
 const like = ref({} as likeIFace);
 export const useFetchUserLike = () => {
   const loading = ref(false);
@@ -15,7 +21,8 @@ export const useFetchUserLike = () => {
 
     try {
       const { data } = await axios.get(
-        `${process.env.VUE_APP_BASE_URL}/api/likes/fetchuserlike/${postId}`
+        `${process.env.VUE_APP_BASE_URL}/api/likes/fetchuserlike/${postId}`,
+        config
       );
 
       if (data) {

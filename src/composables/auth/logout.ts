@@ -1,6 +1,11 @@
 import { ref } from "vue";
 import axios from "axios";
 
+const config = {
+  headers: { "Content-Type": "application/json" },
+  withCredentials: true,
+};
+
 export default () => {
   const loading = ref<boolean>(false);
   const success = ref<boolean>(false);
@@ -10,7 +15,8 @@ export default () => {
 
     try {
       const { data } = await axios.get(
-        `${process.env.VUE_APP_BASE_URL}/api/users/logout`
+        `${process.env.VUE_APP_BASE_URL}/api/users/logout`,
+        config
       );
 
       if (data) {

@@ -1,6 +1,11 @@
 import { ref } from "vue";
 import axios, { AxiosError } from "axios";
 
+const config = {
+  headers: { "Content-Type": "application/json" },
+  withCredentials: true,
+};
+
 export const useDeleteComment = () => {
   const loading = ref(false);
   const success = ref(false);
@@ -12,7 +17,8 @@ export const useDeleteComment = () => {
 
     try {
       const { data } = await axios.delete(
-        `${process.env.VUE_APP_BASE_URL}/api/comments/delete/${id}`
+        `${process.env.VUE_APP_BASE_URL}/api/comments/delete/${id}`,
+        config
       );
 
       if (data) {
@@ -43,7 +49,8 @@ export const useDeleteReply = () => {
 
     try {
       const { data } = await axios.delete(
-        `${process.env.VUE_APP_BASE_URL}/api/comments/replies/delete/${id}`
+        `${process.env.VUE_APP_BASE_URL}/api/comments/replies/delete/${id}`,
+        config
       );
 
       if (data) {

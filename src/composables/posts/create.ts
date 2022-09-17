@@ -6,16 +6,15 @@ interface postData {
   body: string | "";
 }
 
+const config = {
+  headers: { "Content-Type": "application/json" },
+  withCredentials: true,
+};
+
 export default () => {
   const loading = ref(false);
   const success = ref(false);
   const error = ref(null);
-
-  const config = {
-    headers: {
-      "Content-Type": "application/json",
-    },
-  };
 
   const createPost = async (postData: postData) => {
     loading.value = true;

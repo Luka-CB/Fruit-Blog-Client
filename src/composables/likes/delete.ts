@@ -1,6 +1,11 @@
 import { ref } from "vue";
 import axios from "axios";
 
+const config = {
+  headers: { "Content-Type": "application/json" },
+  withCredentials: true,
+};
+
 export const useDeleteLike = () => {
   const loading = ref(false);
   const success = ref(false);
@@ -10,7 +15,8 @@ export const useDeleteLike = () => {
 
     try {
       const { data } = await axios.delete(
-        `${process.env.VUE_APP_BASE_URL}/api/likes/delete/${id}`
+        `${process.env.VUE_APP_BASE_URL}/api/likes/delete/${id}`,
+        config
       );
 
       if (data) {
@@ -35,7 +41,8 @@ export const useUnlikePost = () => {
 
     try {
       const { data } = await axios.delete(
-        `${process.env.VUE_APP_BASE_URL}/api/likes/unlike/${id}`
+        `${process.env.VUE_APP_BASE_URL}/api/likes/unlike/${id}`,
+        config
       );
 
       if (data) {

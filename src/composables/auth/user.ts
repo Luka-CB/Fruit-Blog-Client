@@ -19,6 +19,11 @@ interface lsUserIFace {
   isAdmin: boolean;
 }
 
+const config = {
+  headers: { "Content-Type": "application/json" },
+  withCredentials: true,
+};
+
 const user = ref({} as userIFace);
 const userInfo = ref({} as lsUserIFace);
 
@@ -32,7 +37,8 @@ export const useFetchUser = () => {
 
     try {
       const { data } = await axios.get(
-        `${process.env.VUE_APP_BASE_URL}/api/users/current`
+        `${process.env.VUE_APP_BASE_URL}/api/users/current`,
+        config
       );
 
       if (data) {
@@ -74,7 +80,8 @@ export const useFetchUsers = () => {
 
     try {
       const { data } = await axios.get(
-        `${process.env.VUE_APP_BASE_URL}/api/users/fetchall?searchQ=${queries.searchQ}&sort=${queries.sort}&page=${queries.page}`
+        `${process.env.VUE_APP_BASE_URL}/api/users/fetchall?searchQ=${queries.searchQ}&sort=${queries.sort}&page=${queries.page}`,
+        config
       );
 
       if (data) {

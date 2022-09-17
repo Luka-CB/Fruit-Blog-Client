@@ -9,16 +9,15 @@ interface userData {
   isAdmin?: boolean;
 }
 
+const config = {
+  headers: { "Content-Type": "application/json" },
+  withCredentials: true,
+};
+
 export const useUpdateAccount = () => {
   const success = ref(false);
   const error = ref(null);
   const loading = ref(false);
-
-  const config = {
-    headers: {
-      "Content-Type": "application/json",
-    },
-  };
 
   const updateAccount = async (userData: userData) => {
     loading.value = true;
@@ -52,12 +51,6 @@ export const useEditAccountByAdmin = () => {
   const success = ref(false);
   const error = ref(null);
   const loading = ref(false);
-
-  const config = {
-    headers: {
-      "Content-Type": "application/json",
-    },
-  };
 
   const editAccount = async (userData: userData) => {
     loading.value = true;
